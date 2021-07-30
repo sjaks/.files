@@ -1,0 +1,18 @@
+# Set default port per sink
+set-card-profile 2 output:hdmi-stereo-extra1
+set-card-profile alsa_card.pci-0000_07_00.1 output:hdmi-stereo-extra1
+
+#!/bin/sh
+# turn TV on when system wakes up and turn off accordingly
+#/lib/systemd/system-sleep/99cec
+
+case $1/$2 in
+  pre/*)
+    echo "Turning TV off"
+    echo standby 0 | cec-client -s
+    ;;
+  post/*)
+    echo "Turning TV on"
+    echo on 0 | cec-client -s
+    ;;
+esac
