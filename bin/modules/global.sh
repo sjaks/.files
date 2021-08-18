@@ -50,6 +50,7 @@ cowsay
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/bash_logout /home/sami/.bash_logout
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
+ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 
