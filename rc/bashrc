@@ -1,15 +1,5 @@
-# .--.
-# |__| .--------.
-# |=.| |.------.|
-# |--| || BASH ||
-# |  | |'------'|
-# |__|~')______('
-#
-# My .bashrc file.
-# Mostly just aliases, colors and a nice PS1.
-#
+# .files
 # sjaks@github
-
 
 # If not running interactively, don't do anything
 case $- in
@@ -93,7 +83,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Custom aliases
 alias ll='echo -n "count " && ls -1A | wc -l && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
-alias getpass='openssl rand -base64 18'
 alias gitt='git log --oneline --all --graph'
 alias octave='cd ~/Documents && octave'
 alias curll='curl -IL'
@@ -102,7 +91,6 @@ alias digfi='dig +short all @a.fi'
 alias myip='curl ipinfo.io/ip'
 alias dir='explorer.exe'
 alias sus='sudo -E su'
-alias c='clear'
 alias apps='apt list --installed | grep -v automatic'
 
 
@@ -121,8 +109,10 @@ PROMPT_COMMAND=__tercommand
 PROMPT_COMMAND="echo -ne '\033]2;Terminal: ${HOSTNAME}\007';$PROMPT_COMMAND"
 PROMPT_COMMAND="history -a; history -c; history -r;$PROMPT_COMMAND"
 
+
 # Trim working directory print
 export PROMPT_DIRTRIM=1
+
 
 # Build PS1 prompt
 __tercommand() {

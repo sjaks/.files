@@ -1,4 +1,4 @@
-## nanorc
+## .files
 ## sjaks@github.com
 ## Based on github.com/roopelele/dotfiles
 
@@ -20,9 +20,6 @@ set linenumbers
 ## Enable vim-style lock-files.  This is just to let a vim user know you
 ## are editing a file [s]he is trying to edit and vice versa.
 set locking
-
-## Enable mouse support, if available for your system.
-set mouse
 
 ## Allow nano to be suspended.
 set suspend
@@ -48,7 +45,7 @@ set functioncolor green
 
 ## Setup of syntax coloring
 
-## To include all existing syntax definitions, you can do:
+## Include all existing syntax definitions
 include "/usr/share/nano/*.nanorc"
 
 ## Trailing space highlighting
@@ -61,18 +58,10 @@ extendsyntax python tabgives "    "
 
 
 ## Key bindings.
-
-## make <Ctrl+Backspace> delete the word to the left of the cursor:
 bind ^H chopwordleft main
-
-## If you would like nano to have keybindings that are more "usual",
-## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
-## then uncomment these:
 bind ^S savefile main
 bind ^F whereis all
 bind ^C copy main
 bind ^V paste all
-unbind ^K main
-unbind ^U all
 bind ^Z undo main
 bind ^Y redo main

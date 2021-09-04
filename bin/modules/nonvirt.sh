@@ -29,9 +29,6 @@ ruby-bundler \
 qt5-default \
 qtcreator \
 moreutils \
-virtualbox \
-virtualbox-dkms \
-vagrant \
 docker \
 docker-compose \
 inkscape \
@@ -52,9 +49,6 @@ sudo dpkg -i /tmp/discord.deb
 sudo dpkg -i /tmp/code.deb
 sudo dpkg -i /tmp/slack.deb
 sudo apt -y install -f
-
-# Install vagrant plugins
-vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
 # Install vscode extensions
 code --install-extension dracula-theme.theme-dracula
