@@ -1,12 +1,11 @@
 # My Linux dotfiles and install scripts
 These work on my machine but might not work on yours without major modifications. Use them only as inspiration.
 
-There are scripts (`bin/`) for installing these dotfiles for
-- Ubuntu with the latest Gnome DE
-- WSL Ubuntu
-- Ubuntu Server
+There are scripts under `bin/` for installing these dotfiles for
+- Ubuntu with Gnome DE (20.04)
+- Ubuntu Server (20.04)
 
-## Gnome notes
+## Ubuntu with Gnome DE
 
 ### Installing packages and configuring the system
 

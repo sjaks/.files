@@ -77,11 +77,7 @@ chown sami /home/sami/.ssh
 chmod 700 /home/sami/.ssh
 
 # Fetch and link dotfiles and configs for GUI apps
-ln -sf /home/sami/.files/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
-
-# Link work gitconfig
-ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 
 
 ###############################

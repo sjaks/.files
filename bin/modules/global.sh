@@ -53,6 +53,7 @@ ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
 ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
+ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc

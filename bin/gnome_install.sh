@@ -62,6 +62,8 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 
+# Set power button action
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend
 
 ###########################
 # SET APPEARANCE SETTINGS #
@@ -89,10 +91,6 @@ gsettings set org.gnome.shell favorite-apps []
 # Hide Gnome 3 desktop icons (Ubuntu specific)
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
-
-# Set wallpaper
-gsettings set org.gnome.desktop.background picture-uri 'file:///home/sami/.wallpaper.jpg'
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/sami/.wallpaper.jpg'
 
 # Edit Gnome terminal profile
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
