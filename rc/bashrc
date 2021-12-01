@@ -92,6 +92,8 @@ alias myip='curl ipinfo.io/ip'
 alias dir='explorer.exe'
 alias sus='sudo -E su'
 alias apps='apt list --installed | grep -v automatic'
+alias vagclean='docker-compose down -v --remove-orphans && rm -rf .vagrant'
+alias wpup='docker-compose run -e WP_USER_UID=$UID --service-ports --rm wordpress'
 
 
 # Bash completion
