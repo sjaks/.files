@@ -51,12 +51,12 @@ rm -rf /home/sami/.mozilla
 ############################
 
 # Set screen power settings
-gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.desktop.session idle-delay 30
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend true
 
 # Disable autodim
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
 
 # Disable inactivity suspending
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
