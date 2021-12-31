@@ -29,6 +29,7 @@ traceroute \
 nmap \
 whois \
 idn \
+speedtest-cli \
 influxdb-client \
 gcc \
 build-essential \
