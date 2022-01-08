@@ -59,7 +59,6 @@ clear_cache () {
 	rm /home/sami/.gnuplot_history
 	rm /home/sami/.node_repl_history
 	rm /home/sami/.php_history
-	rm /home/sami/.octave_hist
 }
 
 
@@ -84,12 +83,10 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ll='echo -n "count " && ls -1A | wc -l && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
 alias gitt='git log --oneline --all --graph'
-alias octave='cd ~/Documents && octave'
 alias curll='curl -IL'
 alias digg='dig ANY +noall +answer'
 alias digfi='dig +short all @a.fi'
 alias myip='curl ipinfo.io/ip'
-alias dir='explorer.exe'
 alias sus='sudo -E su'
 alias apps='apt list --installed | grep -v automatic'
 alias vagclean='docker-compose down -v --remove-orphans && rm -rf .vagrant'

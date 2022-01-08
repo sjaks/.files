@@ -1,9 +1,7 @@
 # My Linux dotfiles and install scripts
 These work on my machine but might not work on yours without major modifications. Use them only as inspiration.
 
-There are scripts under `bin/` for installing these dotfiles for
-- Ubuntu with Gnome DE (20.04)
-- Ubuntu Server (20.04)
+There's a script under `bin/` for installing these dotfiles for Ubuntu with Gnome DE (20.04).
 
 ## Ubuntu with Gnome DE
 
@@ -21,7 +19,7 @@ chmod 600 /home/sami/.ssh/id_ed25519
 ```
 3. Install git: `sudo apt install git`.
 4. Clone this repo: `git clone git@github.com/sjaks/.files.git`.
-5. Run `./bin/gnome_install.sh`.
+5. Run `./bin/install.sh`.
 
 ### Additional theming
 
