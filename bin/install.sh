@@ -14,26 +14,68 @@ setxkbmap fi
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'fi')]"
 
 
-###################
-# EXECUTE MODULES #
-###################
-
-# Do global configuration
-source /home/sami/.files/bin/modules/global.sh
-
-# This is a GUI install on an actual PC
-source /home/sami/.files/bin/modules/nonvirt.sh
-
-# Get rid of snap
-source /home/sami/.files/bin/modules/snap.sh
-
-
 ######################
 # CONFIGURE PACKAGES #
 ######################
 
 # Install additional Gnome packages with apt
 sudo apt -y -q install \
+neofetch \
+unzip \
+htop \
+catimg \
+ccze \
+colordiff \
+vim \
+curl \
+wget \
+mlocate \
+silversearcher-ag \
+git \
+net-tools \
+traceroute \
+nmap \
+whois \
+idn \
+speedtest-cli \
+influxdb-client \
+gcc \
+build-essential \
+python3 \
+python3-pip \
+nodejs \
+npm \
+rsync \
+entr \
+ncdu \
+cowsay \
+ufw \
+gimp \
+obs-studio \
+shotcut \
+fonts-noto-color-emoji \
+pavucontrol \
+qt5-style-plugins \
+papirus-icon-theme \
+mesa-utils \
+scrot \
+texlive-latex-recommended \
+texlive-lang-european \
+poedit \
+flake8 \
+php-codesniffer \
+ruby-dev \
+ruby-bundler \
+qt5-default \
+qtcreator \
+moreutils \
+docker \
+docker-compose \
+inkscape \
+dia \
+audacity \
+hardinfo \
+steam \
 gnome-tweak-tool \
 rhythmbox \
 gitg \
@@ -44,6 +86,27 @@ dconf-cli
 # Remove unneeded preinstalled things
 sudo apt -y remove firefox firefox-locale-en thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
 rm -rf /home/sami/.mozilla
+
+# Install snaps
+sudo snap install spotify
+sudo snap install telegram-desktop
+sudo snap install discord
+sudo snap install code --classic
+sudo snap install slack --classic
+
+# Install Google Chrome
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i /tmp/chrome.deb
+sudo apt -y install -f
+
+# Install vscode extensions
+code --install-extension dracula-theme.theme-dracula
+code --install-extension ms-python.python
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.vscode-typescript-next
+code --install-extension ecmel.vscode-html-css
+code --install-extension ms-azuretools.vscode-docker
 
 
 ############################
@@ -131,6 +194,25 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Alt>P
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
 
+# Setup directories
+mkdir -p /home/sami/.config/Code/User/
+mkdir /home/sami/.ssh
+chown sami /home/sami/.ssh
+chmod 700 /home/sami/.ssh
+
+# Fetch and link global dotfiles and configs
+ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
+ln -sf /home/sami/.files/rc/bash_logout /home/sami/.bash_logout
+ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
+ln -sf /home/sami/.files/rc/profile /home/sami/.profile
+ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
+ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
+ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
+
+# Link the bare minimum dotfiles for the root user
+sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
+sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
+
 # Fetch and link Gnome specific dotfiles and configs
 ln -sf /home/sami/.files/pic/avatar.jpg /home/sami/.face
 ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
@@ -156,6 +238,9 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Enable sound over-amplification
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+
+# Add user to docker group
+sudo usermod -aG docker sami
 
 
 ###############
