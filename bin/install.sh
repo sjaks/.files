@@ -84,8 +84,14 @@ gnome-shell-extensions \
 dconf-cli
 
 # Remove unneeded preinstalled things
-sudo apt -y remove firefox firefox-locale-en thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
-rm -rf /home/sami/.mozilla
+sudo apt -y remove \
+firefox \
+firefox-locale-en \
+thunderbird \
+aisleriot \
+gnome-mahjongg \
+gnome-mines \
+gnome-sudoku
 
 # Install snaps
 sudo snap install spotify
@@ -114,7 +120,7 @@ code --install-extension ms-azuretools.vscode-docker
 ############################
 
 # Set screen power settings
-gsettings set org.gnome.desktop.session idle-delay 30
+gsettings set org.gnome.desktop.session idle-delay 0
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend true
 
@@ -193,6 +199,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Alt>P
 # Remove unused home directories
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
+rm -rf /home/sami/.mozilla
 
 # Setup directories
 mkdir -p /home/sami/.config/Code/User/
