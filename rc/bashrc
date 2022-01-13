@@ -26,8 +26,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
-	tailc () { tail $@ | ccze -A ; }
-	catc () { cat $@ | ccze -A ; }
 fi
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -66,17 +64,19 @@ clear_cache () {
 # updates packages, removes some totally unnecessary
 # temp files and moves Downloads and screenshots to trash.
 daily () {
-	sudo apt update
-	sudo apt -y upgrade
+	cd /home/sami/.files
+	git pull --rebase
+	sudo update-grub
+	sudo apt-get update
+	sudo apt-get -y upgrade
+	sudo apt-get install -f
+	sudo apt-get clean
 	clear_cache
 	mv /home/sami/Downloads/* /home/sami/.local/share/Trash/files
 	mv /home/sami/Pictures/Screenshot* /home/sami/.local/share/Trash/files
-	sudo apt -y autoremove
+	sudo apt-get -y autoremove
+	cd -
 }
-
-
-# Add ~/.local/bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
 
 
 # Custom aliases
