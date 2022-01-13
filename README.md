@@ -23,6 +23,6 @@ chmod 600 /home/sami/.ssh/id_ed25519
 
 ### Additional theming
 
-#### Dracula colors for Slack
+#### Colors for Slack
 Use this theme string for Slack:
-`#282A36,#44475A,#44475A,#8BE9FD,#6272A4,#FFFFFF,#50FA7B,#FF55551`
+`#2F343F,#2C3849,#5294E2,#FFFFFF,#494D58,#FFFFFF,#94E864,#78AF8F,#2F343F,#FFFFFF`

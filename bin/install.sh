@@ -56,6 +56,7 @@ shotcut \
 fonts-noto-color-emoji \
 pavucontrol \
 qt5-style-plugins \
+arc-theme \
 papirus-icon-theme \
 mesa-utils \
 scrot \
@@ -106,7 +107,7 @@ sudo dpkg -i /tmp/chrome.deb
 sudo apt -y install -f
 
 # Install vscode extensions
-code --install-extension dracula-theme.theme-dracula
+code --install-extension ph-hawkins.arc-plus
 code --install-extension ms-python.python
 code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension ms-vscode.cpptools
@@ -138,15 +139,9 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 # SET APPEARANCE SETTINGS #
 ###########################
 
-# Fetch and install GTK theme
-mkdir /home/sami/.themes
-wget -O /tmp/dracula.zip https://github.com/dracula/gtk/archive/master.zip
-unzip /tmp/dracula.zip -d /home/sami/.themes
-mv /home/sami/.themes/gtk-master/ /home/sami/.themes/Dracula
-
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Dracula'
-gsettings set org.gnome.shell.extensions.user-theme name 'Dracula'
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
+gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 dconf write /org/gnome/terminal/legacy/theme-variant "'dark'"
 
