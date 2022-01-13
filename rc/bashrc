@@ -118,15 +118,9 @@ __tercommand() {
     local EXIT="$?"
 	local BRANCH=$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | tr -d '\n')
 
-    PS1="${TERGREEN}\u"           # username
+    PS1="${TERYELLOW}\u"           # username
 	PS1+="${TERNOCOL}@"           # separator
-
-	# hostname
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		PS1+="${TERCYAN}\h"
-	else
-		PS1+="${TERBLUE}\h"
-	fi
+	PS1+="${TERCYAN}\h"           # hostname
 
 	# write permission colon
 	if [ -w . ]; then
@@ -135,16 +129,11 @@ __tercommand() {
 		PS1+="${TERRED}:${TERNOCOL}"
 	fi
 
-	PS1+="${TERYELLOW}\w"         # working dir
+	PS1+="${TERGREEN}\w"         # working dir
 
 	# git branch
 	if [ ! -z "$BRANCH" ]; then
 		PS1+=" ${TERRED}(${BRANCH})${TERNOCOL}"	
-	fi
-
-	# exit code
-	if [ $EXIT != 0 ]; then
-        PS1+=" ${TERMAGENTA}${EXIT}${TERNOCOL}"
 	fi
 
 	PS1+="${TERNOCOL} \$ "        # prompt sign
