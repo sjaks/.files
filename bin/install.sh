@@ -56,8 +56,6 @@ shotcut \
 fonts-noto-color-emoji \
 pavucontrol \
 qt5-style-plugins \
-arc-theme \
-papirus-icon-theme \
 mesa-utils \
 scrot \
 texlive-latex-recommended \
@@ -108,7 +106,7 @@ sudo dpkg -i /tmp/chrome.deb
 sudo apt -y install -f
 
 # Install vscode extensions
-code --install-extension ph-hawkins.arc-plus
+code --install-extension adsoncicilioti.yaru-vscode
 code --install-extension ms-python.python
 code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension ms-vscode.cpptools
@@ -141,9 +139,9 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 ###########################
 
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'
+gsettings set org.gnome.shell.extensions.user-theme name 'Yaru-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Yaru'
 dconf write /org/gnome/terminal/legacy/theme-variant "'dark'"
 
 # Set dock settings
@@ -163,9 +161,9 @@ profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors false
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-color "'#2f343f'"
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" foreground-color "'#f3f4f5'"
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#262b36', '#9c3528', '#61bc3b', '#f3b43a', '#0d68a8', '#744560', '#288e9c', '#a2a2a2', '#2f343f', '#d64937', '#86df5d', '#fdd75a', '#0f75bd', '#9e5e83', '#37c3d6', '#f9f9f9']"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-color "#222222"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" foreground-color "#fdfdfd"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#928986', '#FF6D4C', '#69FF94', '#FFF5BC', '#FFA2EB', '#FFAEA0', '#98E4FF', '#FFFFFF', '#222222', '#FF794A', '#52D866', '#FFDC98', '#EE80D6', '#FF9D88', '#60D4FD', '#fdfdfd']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 
 # Change shell theme
