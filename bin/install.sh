@@ -100,6 +100,7 @@ sudo snap install telegram-desktop
 sudo snap install discord
 sudo snap install code --classic
 sudo snap install slack --classic
+sudo snap install zoom-client
 
 # Install Google Chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
