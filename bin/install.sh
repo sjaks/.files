@@ -72,7 +72,7 @@ docker \
 docker-compose \
 inkscape \
 dia \
-audacity \
+gnome-sound-recorder \
 hardinfo \
 steam \
 gnome-tweak-tool \
