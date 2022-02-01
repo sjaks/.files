@@ -102,39 +102,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# Bash prompt
-PROMPT_COMMAND=__tercommand
-PROMPT_COMMAND="echo -ne '\033]2;Terminal: ${HOSTNAME}\007';$PROMPT_COMMAND"
-PROMPT_COMMAND="history -a; history -c; history -r;$PROMPT_COMMAND"
-
-
-# Trim working directory print
-export PROMPT_DIRTRIM=1
-
-
-# Build PS1 prompt
-__tercommand() {
-    local EXIT="$?"
-	local BRANCH=$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | tr -d '\n')
-
-    PS1="${TERYELLOW}\u"           # username
-	PS1+="${TERNOCOL}@"           # separator
-	PS1+="${TERCYAN}\h"           # hostname
-
-	# write permission colon
-	if [ -w . ]; then
-		PS1+="${TERGREEN}:${TERNOCOL}"
-	else
-		PS1+="${TERRED}:${TERNOCOL}"
-	fi
-
-	PS1+="${TERGREEN}\w"         # working dir
-
-	# git branch
-	if [ ! -z "$BRANCH" ]; then
-		PS1+=" ${TERRED}(${BRANCH})${TERNOCOL}"	
-	fi
-
-	PS1+="${TERNOCOL} \$ "        # prompt sign
-}
+eval "$(starship init bash)"

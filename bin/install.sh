@@ -99,6 +99,7 @@ sudo snap install discord
 sudo snap install code --classic
 sudo snap install slack --classic
 sudo snap install zoom-client
+sudo snap install starship
 
 # Install Google Chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -113,6 +114,12 @@ code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ecmel.vscode-html-css
 code --install-extension ms-azuretools.vscode-docker
+
+# Install nerd fonts
+wget -O /tmp/nerd.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip
+mkdir /home/sami/.fonts
+unzip /tmp/nerd.zip -d /home/sami/.fonts
+fc-cache -fv
 
 
 ############################
@@ -158,13 +165,16 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 # Edit Gnome terminal profile
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 125
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 36
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors false
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-color "#222222"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" foreground-color "#fdfdfd"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#928986', '#FF6D4C', '#69FF94', '#FFF5BC', '#FFA2EB', '#FFAEA0', '#98E4FF', '#FFFFFF', '#222222', '#FF794A', '#52D866', '#FFDC98', '#EE80D6', '#FF9D88', '#60D4FD', '#fdfdfd']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font 'UbuntuMono Nerd Font Regular 11'
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
 # Change shell theme
 killall -3 gnome-shell
@@ -211,6 +221,7 @@ ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
+ln -sf /home/sami/.files/rc/gtk.css /home/sami/.config/gtk-3.0/gtk.css
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
