@@ -218,7 +218,6 @@ ln -sf /home/sami/.files/rc/bash_logout /home/sami/.bash_logout
 ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
-ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 ln -sf /home/sami/.files/rc/gtk.css /home/sami/.config/gtk-3.0/gtk.css
 
