@@ -4,6 +4,3 @@
 
 [color]
 	ui = auto
-
-[includeIf "gitdir:~/Documents/work"]
-    path = .gitconfig-work

@@ -11,15 +11,8 @@
 ## optionally followed by these closing brackets, can end sentences.
 set brackets ""')>]}"
 
-## Remember the used search/replace strings for the next session.
-set historylog
-
 ## Display line numbers to the left of the text.
 set linenumbers
-
-## Enable vim-style lock-files.  This is just to let a vim user know you
-## are editing a file [s]he is trying to edit and vice versa.
-set locking
 
 ## Allow nano to be suspended.
 set suspend
@@ -34,16 +27,13 @@ set tabstospaces
 ## of a single character, and without affecting the cutbuffer).
 set zap
 
-## Paint the interface elements of nano.  These are examples;
-## by default there are no colors, except for errorcolor.
+## Paint the interface elements of nano.
 set errorcolor brightwhite,red
 set selectedcolor brightwhite,magenta
 set stripecolor ,yellow
 set numbercolor black,white
 set keycolor white
 set functioncolor green
-
-## Setup of syntax coloring
 
 ## Include all existing syntax definitions
 include "/usr/share/nano/*.nanorc"
