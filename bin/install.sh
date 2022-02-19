@@ -97,7 +97,6 @@ sudo snap install spotify
 sudo snap install telegram-desktop
 sudo snap install discord
 sudo snap install code --classic
-sudo snap install slack --classic
 sudo snap install zoom-client
 sudo snap install starship
 
