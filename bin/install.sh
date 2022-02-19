@@ -98,7 +98,6 @@ sudo snap install telegram-desktop
 sudo snap install discord
 sudo snap install code --classic
 sudo snap install zoom-client
-sudo snap install starship
 
 # Install Google Chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -219,7 +218,6 @@ ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
-ln -sf /home/sami/.files/rc/gtk.css /home/sami/.config/gtk-3.0/gtk.css
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
