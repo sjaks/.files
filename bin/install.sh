@@ -113,12 +113,6 @@ code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ecmel.vscode-html-css
 code --install-extension ms-azuretools.vscode-docker
 
-# Install nerd fonts
-wget -O /tmp/nerd.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip
-mkdir /home/sami/.fonts
-unzip /tmp/nerd.zip -d /home/sami/.fonts
-fc-cache -fv
-
 
 ############################
 # CONFIGURE POWER BEHAVIOR #
