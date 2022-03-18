@@ -34,7 +34,6 @@ shopt -s checkwinsize
 # updates packages, removes some totally unnecessary
 # temp files and moves Downloads and screenshots to trash.
 daily () {
-	sudo apt-get update
 	rm -rf /home/sami/.cache/*
 	rm /home/sami/.python_history
 	rm /home/sami/.viminfo
@@ -42,26 +41,16 @@ daily () {
 	rm /home/sami/.gnuplot_history
 	rm /home/sami/.node_repl_history
 	rm /home/sami/.php_history
-	mv /home/sami/Downloads/* /home/sami/.local/share/Trash/files
-	mv /home/sami/Pictures/Screenshot* /home/sami/.local/share/Trash/files
-	cd /home/sami/.files
-	git pull --rebase
-	sudo update-grub
-	sudo apt-get -y upgrade
-	sudo apt-get install -f
-	sudo apt-get clean
-	sudo apt-get -y autoremove
-	cd -
+	sudo dnf -y upgrade
+	sudo dnf -y autoremove
 }
 
 
 # Custom aliases
-alias ll='echo -n "count " && ls -1A | wc -l && ls -alFh --group-directories-first'
-alias neofetch='neofetch --ascii_distro GNU'
+alias ll='ls -alFh --group-directories-first'
 alias gitt='git log --oneline --all --graph'
 alias curll='curl -IL'
 alias digg='dig ANY +noall +answer'
-alias myip='curl ipinfo.io/ip'
 
 
 # Bash completion
