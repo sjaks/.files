@@ -3,14 +3,11 @@
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "window.menuBarVisibility": "hidden",
-    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontFamily": "Monospace",
     "editor.fontSize": 16,
-    "workbench.preferredDarkColorTheme": "Arc+",
+    "workbench.colorTheme": "Gnome Light (GitHub)",
     "workbench.tips.enabled": false,
     "workbench.tree.indent": 4,
-    "editor.rulers": [
-        79
-    ],
     "files.autoSave": "onFocusChange",
     "update.showReleaseNotes": false,
     "telemetry.enableCrashReporter": false,
@@ -20,5 +17,7 @@
     "workbench.startupEditor": "none",
     "window.restoreWindows": "none",
     "files.hotExit": "off",
-    "workbench.colorTheme": "Yaru Dark"
+    "editor.rulers": [
+        79
+    ]
 }
