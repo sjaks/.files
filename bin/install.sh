@@ -98,7 +98,8 @@ codium --install-extension ms-azuretools.vscode-docker
 
 # Set screen power settings
 gsettings set org.gnome.desktop.session idle-delay 0
-gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.lockdown disable-lock-screen false
+gsettings set org.gnome.desktop.screensaver lock-enabled true
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
 
 # Disable inactivity suspending
