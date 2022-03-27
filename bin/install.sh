@@ -189,6 +189,9 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 # Enable sound over-amplification
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 
+# Set timezone
+sudo timedatectl set-timezone Europe/Helsinki
+
 # Add user to docker group
 sudo usermod -aG docker sami
 
