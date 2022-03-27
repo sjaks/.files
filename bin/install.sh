@@ -122,6 +122,9 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
+# Remove favourites from dock
+gsettings set org.gnome.shell favorite-apps "[]"
+
 
 ################################
 # CONFIGURE KEYBOARD SHORTCUTS #
