@@ -66,7 +66,6 @@ rhythmbox \
 google-chrome-stable \
 codium \
 telegram-desktop \
-lpf-spotify-client \
 discord \
 steam \
 obs-studio
