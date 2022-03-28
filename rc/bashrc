@@ -52,6 +52,7 @@ alias ll='ls -alFh --group-directories-first'
 alias gitt='git log --oneline --all --graph'
 alias curll='curl -IL'
 alias digg='dig ANY +noall +answer'
+alias code='codium'
 
 
 # Bash completion
