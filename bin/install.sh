@@ -167,7 +167,7 @@ sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
 sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
 
 # Fetch and link Gnome specific dotfiles and configs
-ln -sf /home/sami/.files/pic/avatar.jpg /home/sami/.face
+sudo ln -sf /home/sami/.files/pic/avatar.jpg /var/lib/AccountsService/icons/sami
 ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 
 
