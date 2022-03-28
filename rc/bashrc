@@ -41,6 +41,7 @@ daily () {
 	rm /home/sami/.gnuplot_history
 	rm /home/sami/.node_repl_history
 	rm /home/sami/.php_history
+	rm /home/sami/.lesshst
 	sudo dnf -y upgrade
 	sudo dnf -y autoremove
 }
