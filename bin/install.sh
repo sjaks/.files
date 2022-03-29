@@ -20,7 +20,9 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'fi')]"
 
 # Install extra repositories
 sudo dnf -y install fedora-workstation-repositories
+sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager -y --set-enabled google-chrome
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
@@ -53,7 +55,9 @@ python3-pip \
 python-flake8 \
 nodejs \
 npm \
-docker \
+docker-ce \
+docker-ce-cli \
+containerd.io \
 docker-compose \
 gimp \
 gnome-tweak-tool \
@@ -192,7 +196,10 @@ gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 sudo timedatectl set-timezone Europe/Helsinki
 
 # Add user to docker group
+sudo groupadd docker
+sudo gpasswd -a sami docker
 sudo usermod -aG docker sami
+sudo systemctl restart docker
 
 
 ###############
