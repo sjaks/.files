@@ -49,6 +49,7 @@ mlocate \
 the_silver_searcher \
 moreutils \
 google-noto-emoji-fonts \
+papirus-icon-theme \
 neofetch \
 python3 \
 python3-pip \
@@ -70,7 +71,6 @@ rhythmbox \
 google-chrome-stable \
 codium \
 telegram-desktop \
-discord \
 steam \
 obs-studio
 
