@@ -7,6 +7,8 @@ case $- in
 	*) return;;
 esac
 
+# Open new tabs in the same directory
+source /etc/profile.d/vte.sh
 
 # Enable color support for ls, grep, cat and tail
 if [ -x /usr/bin/dircolors ]; then
