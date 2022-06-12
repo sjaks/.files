@@ -26,3 +26,8 @@ chmod 600 /home/sami/.ssh/id_ed25519
 5. Change systemd target with `sudo systemctl set-default graphical.target` (if system boots to tty)
 6. Remake Grub2 configs with `sudo grub2-mkconfig -o /etc/grub2-efi.cfg` and `sudo grub2-mkconfig -o /etc/grub2.cfg`
 7. Do a `reboot`
+
+## List of good Gnome extensions
+[Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
+[Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
+[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
