@@ -87,6 +87,10 @@ gnome-clocks \
 gnome-contacts \
 gnome-connections \
 gnome-maps \
+gnome-characters \
+gnome-font-viewer \
+gnome-tour \
+gnome-photos \
 libreoffice-*
 
 # Install vscode extensions
