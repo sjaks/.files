@@ -124,6 +124,10 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/drool-l.svg'
 
+# Set themes
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+
 # Edit Gnome terminal profile
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
