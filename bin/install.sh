@@ -76,6 +76,8 @@ flatpak install -y flathub com.visualstudio.code
 flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.google.Chrome
 flatpak install -y flathub com.valvesoftware.Steam
+flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub com.spotify.Client
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
