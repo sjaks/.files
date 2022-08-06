@@ -136,6 +136,10 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 # Change dock favourites
 gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
 
+# Reorder apps
+gsettings set org.gnome.desktop.app-folders folder-children ['']
+gsettings reset org.gnome.shell app-picker-layout
+
 
 ################################
 # CONFIGURE KEYBOARD SHORTCUTS #
