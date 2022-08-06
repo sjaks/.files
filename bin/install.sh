@@ -25,8 +25,6 @@ sudo dnf config-manager -y --set-enabled google-chrome
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
 sudo dnf -y upgrade
 
 # Install additional Gnome packages with apt
@@ -37,6 +35,7 @@ gcc \
 ufw \
 vim \
 unzip \
+unar \
 curl \
 wget \
 traceroute \
@@ -54,25 +53,30 @@ neofetch \
 python3 \
 python3-pip \
 python-flake8 \
-nodejs \
-npm \
+fedmod \
+flatpak-module-tools \
 docker-ce \
 docker-ce-cli \
 containerd.io \
 docker-compose \
-gimp \
 gnome-tweak-tool \
 gnome-sound-recorder \
 pavucontrol \
-inkscape \
-dia \
-poedit \
-rhythmbox \
-google-chrome-stable \
-codium \
-telegram-desktop \
-steam \
-obs-studio
+rhythmbox
+
+# Install flatpak repos
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists fedora oci+https://registry.fedoraproject.org
+
+# Install GUI apps asx flatpaks
+flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub org.inkscape.Inkscape
+flatpak install -y flathub org.telegram.desktop
+flatpak install -y flathub com.obsproject.Studio
+flatpak install -y flathub com.visualstudio.code
+flatpak install -y flathub com.getpostman.Postman
+flatpak install -y flathub com.google.Chrome
+flatpak install -y flathub com.valvesoftware.Steam
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
@@ -83,16 +87,17 @@ gnome-weather \
 gnome-clocks \
 gnome-contacts \
 gnome-connections \
-gnome-maps
+gnome-maps \
+libreoffice-*
 
 # Install vscode extensions
-codium --install-extension olifink.fedora-gnome-light-dark
-codium --install-extension ms-python.python
-codium --install-extension bmewburn.vscode-intelephense-client
-codium --install-extension ms-vscode.cpptools
-codium --install-extension ms-vscode.vscode-typescript-next
-codium --install-extension ecmel.vscode-html-css
-codium --install-extension ms-azuretools.vscode-docker
+code --install-extension olifink.fedora-gnome-light-dark
+code --install-extension ms-python.python
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.vscode-typescript-next
+code --install-extension ecmel.vscode-html-css
+code --install-extension ms-azuretools.vscode-docker
 
 
 ############################
@@ -117,6 +122,9 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 # SET APPEARANCE SETTINGS #
 ###########################
 
+# Set wallpaper
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/drool-l.svg'
+
 # Edit Gnome terminal profile
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
@@ -125,8 +133,8 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
-# Remove favourites from dock
-gsettings set org.gnome.shell favorite-apps "[]"
+# Change dock favourites
+gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
 
 
 ################################
@@ -155,7 +163,7 @@ rm -rf /home/sami/Public
 rm -rf /home/sami/.mozilla
 
 # Setup directories
-mkdir -p /home/sami/.config/VSCodium/User/
+mkdir -p /home/sami/.var/app/com.visualstudio.code/config/Code/User/
 mkdir /home/sami/.ssh
 chown sami /home/sami/.ssh
 chmod 700 /home/sami/.ssh
@@ -164,7 +172,7 @@ chmod 700 /home/sami/.ssh
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
-ln -sf /home/sami/.files/rc/code /home/sami/.config/VSCodium/User/settings.json
+ln -sf /home/sami/.files/rc/code /home/sami/.var/app/com.visualstudio.code/config/Code/User/settings.json
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc

@@ -17,6 +17,13 @@ chmod 600 /home/sami/.ssh/id_ed25519
 4. Clone this repo: `git clone git@github.com/sjaks/.files.git`.
 5. Run `./bin/install.sh`.
 
+## List of good Gnome extensions
+[Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
+[Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
+[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
+[Dock from Dash](https://extensions.gnome.org/extension/4703/dock-from-dash/)
+[Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+
 ## Installing Nvidia drivers and fixing some configurations
 
 1. Install the drivers `sudo dnf update && sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda` (needs RPM Fusion repos)
@@ -27,31 +34,6 @@ chmod 600 /home/sami/.ssh/id_ed25519
 6. Remake Grub2 configs with `sudo grub2-mkconfig -o /etc/grub2-efi.cfg` and `sudo grub2-mkconfig -o /etc/grub2.cfg`
 7. Do a `reboot`
 
-## List of good Gnome extensions
-[Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
-[Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
-[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-[Night Theme Switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/)
-[Tactile](https://extensions.gnome.org/extension/4548/tactile/)
-[Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+## Fixing laptop battery drainage issues
 
-## Cleanup
-The `~/.bashrc` file defines the alias `daily` that runs some essential Linux maintenance commands. However, at times the following system cleanup could/should be done.
-
-**Clean Docker**
-Warning: this removes everything, excluding components that are being used.
-```
-$ docker system prune -a
-```
-
-**Clean SSH**
-Notice: this will cause SSH to warn about unknown servers.
-```
-rm ~/.ssh/known_hosts
-```
-
-**Clean Bash**
-After this you'll need to remember your commands and `Ctrl+R` won't help...
-```
-cat /dev/null > ~/.bash_history && history -c && exit
-```
+Add `mem_sleep_default=deep` to `/etc/default/grub` and run `grub2-mkconfig -o /etc/grub2.cfg grub2-mkconfig -o /etc/grub2-efi.cfg`.
