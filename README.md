@@ -20,8 +20,8 @@ chmod 600 /home/sami/.ssh/id_ed25519
 ## List of good Gnome extensions
 [Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
 [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
-[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-[Dock from Dash](https://extensions.gnome.org/extension/4703/dock-from-dash/)
+[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)  
+[Dock from Dash](https://extensions.gnome.org/extension/4703/dock-from-dash/)  
 [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
 
 ## Installing Nvidia drivers and fixing some configurations
