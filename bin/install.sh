@@ -127,6 +127,9 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 # SET APPEARANCE SETTINGS #
 ###########################
 
+# Enable Gnome animations
+gsettings set org.gnome.desktop.interface enable-animations true
+
 # Set wallpaper
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/drool-l.svg'
 
