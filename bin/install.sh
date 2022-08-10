@@ -61,8 +61,7 @@ docker-compose \
 gnome-tweak-tool \
 gnome-sound-recorder \
 pavucontrol \
-rhythmbox \
-firefox
+rhythmbox
 
 # Install flatpak repos
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -78,9 +77,11 @@ flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
 flatpak install -y flathub com.discordapp.Discord
 flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub com.google.Chrome
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
+firefox 
 cheese \
 gedit \
 gnome-weather \
@@ -145,7 +146,7 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
 # Change dock favourites
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
+gsettings set org.gnome.shell favorite-apps "['com.google.Chrome.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
 
 # Reorder apps
 gsettings reset org.gnome.shell app-picker-layout
@@ -175,6 +176,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Alt>P
 # Remove unused home directories
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
+rm -rf /home/sami/.mozilla
 
 # Setup directories
 mkdir -p /home/sami/.var/app/com.visualstudio.code/config/Code/User/
