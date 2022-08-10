@@ -19,7 +19,8 @@ chmod 600 /home/sami/.ssh/id_ed25519
 [Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
 [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)  
 [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
-[Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+[Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)  
+[Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
 
 ## Installing Nvidia drivers and fixing some configurations
 
