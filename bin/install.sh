@@ -212,6 +212,9 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 gsettings set org.gnome.nautilus.preferences sort-directories-first true
 gsettings set org.gnome.nautilus.list-view default-visible-columns ['name', 'detailed_type', 'size', 'date_modified']
 
+# Disable lock screen notifications that turn on the screen
+gsettings set org.gnome.desktop.notifications show-in-lock-screen false
+
 # Show Gnome bar settings
 gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.desktop.interface show-battery-percentage true
