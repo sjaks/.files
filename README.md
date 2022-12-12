@@ -16,11 +16,15 @@ chmod 600 /home/sami/.ssh/id_ed25519
 4. Run `./bin/install.sh`.
 
 ## List of good Gnome extensions
-[Audio Output Switcher](https://extensions.gnome.org/extension/751/audio-output-switcher/)  
 [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)  
 [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
-[Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)  
 [Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
+
+## List of good Firefox (LibreWolf) extensions
+[µBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)  
+[Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)  
+[I don't care about cookies](https://addons.mozilla.org/en-US/firefox/addon/i-dont-care-about-cookies/)  
+[Google Search Fixer](https://addons.mozilla.org/en-US/firefox/addon/google-search-fixer/) (for Android)
 
 ## Installing Nvidia drivers and fixing some configurations
 
