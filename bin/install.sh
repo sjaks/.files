@@ -24,6 +24,8 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm --import https://keys.openpgp.org/vks/v1/by-fingerprint/034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3
+sudo dnf config-manager --add-repo https://rpm.librewolf.net
 sudo dnf -y upgrade
 
 # Install additional Gnome packages with apt
@@ -61,7 +63,8 @@ docker-compose \
 gnome-tweak-tool \
 gnome-sound-recorder \
 pavucontrol \
-rhythmbox
+rhythmbox \
+librewolf
 
 # Install flatpak repos
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -77,7 +80,6 @@ flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
 flatpak install -y flathub com.discordapp.Discord
 flatpak install -y flathub com.spotify.Client
-flatpak install -y flathub io.gitlab.librewolf-community
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
