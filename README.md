@@ -41,3 +41,20 @@ chmod 600 /home/sami/.ssh/id_ed25519
 1. Append `mem_sleep_default=deep` to `GRUB_CMDLINE_LINUX` in `/etc/default/grub`.
 2. Remake Grub2 configs with `grub2-mkconfig -o /etc/grub2.cfg` and `grub2-mkconfig -o /etc/grub2-efi.cfg`.
 3. Do a `reboot`.
+
+## LibreWolf settings
+- Setup the toolbar
+- Uncheck Always ask you where to save files
+- Enable Shortcuts 1 row
+- Enable search suggestions
+- Show seach suggestions in address bar results
+- Show search suggestions ahead of browsing history in address bar results
+- Delete unnecessary search engines
+- Uncheck Delete cookies and site data when LibreWolf is closed
+- Uncheck Clear history when LibreWolf closes
+- Disallow Location and Notifications permissions
+- Don't enable HTTPS-Only Mode
+- Disable ResistFingerprinting
+- Go to https://www.linuxmint.com/searchengines/anse.php?sen=Google&c=y and enable
+- Add homepage shortcuts
+- Install addons
