@@ -24,8 +24,6 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo rpm --import https://keys.openpgp.org/vks/v1/by-fingerprint/034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3
-sudo dnf config-manager --add-repo https://rpm.librewolf.net
 sudo dnf -y upgrade
 
 # Install additional Gnome packages with apt
@@ -63,8 +61,7 @@ docker-compose \
 gnome-tweak-tool \
 gnome-sound-recorder \
 pavucontrol \
-rhythmbox \
-librewolf
+rhythmbox
 
 # Install flatpak repos
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -80,6 +77,7 @@ flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
 flatpak install -y flathub com.discordapp.Discord
 flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub org.mozilla.firefox
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
@@ -148,7 +146,7 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
 # Change dock favourites
-gsettings set org.gnome.shell favorite-apps "['io.gitlab.librewolf-community.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
 
 # Reorder apps
 gsettings reset org.gnome.shell app-picker-layout

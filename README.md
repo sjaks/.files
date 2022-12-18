@@ -20,14 +20,7 @@ chmod 600 /home/sami/.ssh/id_ed25519
 [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
 [Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
 
-## List of good Firefox (LibreWolf) extensions
-[µBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)  
-[Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)  
-[I don't care about cookies](https://addons.mozilla.org/en-US/firefox/addon/i-dont-care-about-cookies/)  
-[Google Search Fixer](https://addons.mozilla.org/en-US/firefox/addon/google-search-fixer/) (for Android)
-
 ## Installing Nvidia drivers and fixing some configurations
-
 1. Install the drivers `sudo dnf update && sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda`. (needs RPM Fusion repos)
 2. Blacklist nouveau drivers `echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf`.
 3. Append `rd.driver.blacklist=nouveau nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX` in `/etc/default/grub`. (Fixes GDM crashing)
@@ -37,24 +30,16 @@ chmod 600 /home/sami/.ssh/id_ed25519
 7. Do a `reboot`
 
 ## Fixing laptop battery drainage issues
-
 1. Append `mem_sleep_default=deep` to `GRUB_CMDLINE_LINUX` in `/etc/default/grub`.
 2. Remake Grub2 configs with `grub2-mkconfig -o /etc/grub2.cfg` and `grub2-mkconfig -o /etc/grub2-efi.cfg`.
 3. Do a `reboot`.
 
-## LibreWolf settings
-- Setup the toolbar
-- Uncheck Always ask you where to save files
-- Enable Shortcuts 1 row
-- Enable search suggestions
-- Show seach suggestions in address bar results
-- Show search suggestions ahead of browsing history in address bar results
-- Delete unnecessary search engines
-- Uncheck Delete cookies and site data when LibreWolf is closed
-- Uncheck Clear history when LibreWolf closes
-- Disallow Location and Notifications permissions
-- Don't enable HTTPS-Only Mode
-- Disable ResistFingerprinting
-- Go to https://www.linuxmint.com/searchengines/anse.php?sen=Google&c=y and enable
-- Add homepage shortcuts
-- Install addons
+## Firefox configuration
+Copy profile to `~/.var/app/org.mozilla.firefox/.mozilla/firefox`.  
+Do a manual install of https://github.com/rafaelmardojai/firefox-gnome-theme if profile import doesn't include it.
+
+## List of good Firefox extensions
+[µBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)  
+[Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)  
+[I don't care about cookies](https://addons.mozilla.org/en-US/firefox/addon/i-dont-care-about-cookies/)  
+[Google Search Fixer](https://addons.mozilla.org/en-US/firefox/addon/google-search-fixer/) (for Android)
