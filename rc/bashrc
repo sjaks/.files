@@ -46,6 +46,7 @@ daily () {
 	rm /home/sami/.lesshst
 	sudo dnf -y upgrade
 	sudo dnf -y autoremove
+	sudo flatpak update -y
 }
 
 
