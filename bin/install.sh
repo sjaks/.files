@@ -81,7 +81,7 @@ flatpak install -y flathub org.mozilla.firefox
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
-firefox 
+firefox \
 cheese \
 gedit \
 gnome-weather \
@@ -96,7 +96,7 @@ gnome-photos \
 libreoffice-*
 
 # Install vscode extensions
-code --install-extension piousdeer.adwaita-theme
+code --install-extension teabyii.ayu
 code --install-extension ms-python.python
 code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension ms-vscode.cpptools
@@ -104,6 +104,11 @@ code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ecmel.vscode-html-css
 code --install-extension esbenp.prettier-vscode
 code --install-extension github.copilot
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension shardulm94.trailing-spaces
 
 
 ############################

@@ -3,17 +3,14 @@
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "window.menuBarVisibility": "hidden",
-    "editor.fontFamily": "Monospace",
     "editor.fontSize": 16,
-    "workbench.colorTheme": "Adwaita Light",
-    "workbench.tips.enabled": false,
+    "workbench.colorTheme": "Ayu Light Bordered",
     "workbench.tree.indent": 4,
     "files.autoSave": "onFocusChange",
     "update.showReleaseNotes": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.statusBar.visible": false,
     "workbench.startupEditor": "none",
     "window.restoreWindows": "none",
     "files.hotExit": "off",
@@ -26,6 +23,17 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.preferredDarkColorTheme": "Adwaita Dark",
-    "extensions.ignoreRecommendations": true
+    "workbench.preferredDarkColorTheme": "Ayu Dark",
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.guides.bracketPairs": true,
+    "editor.formatOnPaste": true,
+    "workbench.preferredLightColorTheme": "Ayu Light Bordered",
+    "workbench.preferredHighContrastLightColorTheme": "Ayu Light Bordered",
+    "workbench.preferredHighContrastColorTheme": "Ayu Dark",
+    "workbench.statusBar.visible": false,
+    "workbench.tips.enabled": false,
+    "window.autoDetectColorScheme": true,
+    "editor.fontFamily": "Monospace"
 }
