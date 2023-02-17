@@ -5,7 +5,7 @@
     "window.menuBarVisibility": "hidden",
     "editor.fontFamily": "Monospace",
     "editor.fontSize": 16,
-    "workbench.colorTheme": "Gnome Light (GitHub)",
+    "workbench.colorTheme": "Adwaita Light",
     "workbench.tips.enabled": false,
     "workbench.tree.indent": 4,
     "files.autoSave": "onFocusChange",
@@ -19,5 +19,13 @@
     "files.hotExit": "off",
     "editor.rulers": [
         79
-    ]
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.preferredDarkColorTheme": "Adwaita Dark",
+    "extensions.ignoreRecommendations": true
 }
