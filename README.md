@@ -16,10 +16,7 @@ chmod 600 /home/sami/.ssh/id_ed25519
 4. Run `./bin/install.sh`.
 
 ## List of good Gnome extensions
-[Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)  
-[Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)  
-[Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)  
-[Media Controls](https://extensions.gnome.org/extension/4470/media-controls/)  
+[Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)   
 [Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
 
 ## Installing Nvidia drivers and fixing some configurations
