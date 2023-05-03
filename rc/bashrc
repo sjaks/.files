@@ -36,7 +36,6 @@ shopt -s checkwinsize
 # updates packages, removes some totally unnecessary
 # temp files and moves Downloads and screenshots to trash.
 daily () {
-	rm -rf /home/sami/.cache/*
 	rm /home/sami/.python_history
 	rm /home/sami/.viminfo
 	rm /home/sami/.wget-hsts
