@@ -96,7 +96,7 @@ gnome-photos \
 libreoffice-*
 
 # Install vscode extensions
-code --install-extension teabyii.ayu
+code --install-extension piousdeer.adwaita-theme
 code --install-extension ms-python.python
 code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension ms-vscode.cpptools
@@ -107,7 +107,7 @@ code --install-extension github.copilot
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension bradlc.vscode-tailwindcss
-code --install-extension vscode-icons-team.vscode-icons
+code --install-extension PKief.material-icon-theme
 code --install-extension shardulm94.trailing-spaces
 
 

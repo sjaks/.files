@@ -3,8 +3,6 @@
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "window.menuBarVisibility": "hidden",
-    "editor.fontSize": 16,
-    "workbench.colorTheme": "Ayu Light Bordered",
     "workbench.tree.indent": 4,
     "files.autoSave": "onFocusChange",
     "update.showReleaseNotes": false,
@@ -26,7 +24,6 @@
     "workbench.preferredDarkColorTheme": "Ayu Dark",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.defaultProfile.linux": "bash",
-    "workbench.iconTheme": "vscode-icons",
     "editor.guides.bracketPairs": true,
     "editor.formatOnPaste": true,
     "workbench.preferredLightColorTheme": "Ayu Light Bordered",
@@ -35,5 +32,12 @@
     "workbench.statusBar.visible": false,
     "workbench.tips.enabled": false,
     "window.autoDetectColorScheme": true,
-    "editor.fontFamily": "Monospace"
+    "editor.fontFamily": "Source Code Pro",
+    "git.openRepositoryInParentFolders": "never",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "Adwaita Light & colorful status bar",
+    "workbench.iconTheme": "material-icon-theme"
 }
