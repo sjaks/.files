@@ -179,6 +179,12 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Alt>P
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Alt>Insert']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Control><Super>Return']"
 
+# Better alt+tab
+dconf write /org/gnome/desktop/wm/keybindings/switch-applications "['<Super>Tab']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-applications-backward "['<Shift><Super>Tab']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-windows "['<Alt>Tab']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-windows-backward "['<Shift><Alt>Tab']"
+
 
 ###################################
 # CONFIGURE DIRECTORIES AND FILES #
