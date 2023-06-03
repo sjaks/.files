@@ -77,7 +77,7 @@ flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
 flatpak install -y flathub com.discordapp.Discord
 flatpak install -y flathub com.spotify.Client
-flatpak install -y flathub org.mozilla.firefox
+flatpak install -y flathub com.google.Chrome
 
 # Remove unnecessary preinstalled things
 sudo dnf -y remove \
@@ -152,7 +152,7 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" cursor-shape "underline"
 
 # Change dock favourites
-gsettings set org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
+gsettings set org.gnome.shell favorite-apps "['com.google.Chrome.desktop', 'org.gnome.Terminal.desktop', 'com.visualstudio.code.desktop', 'org.gnome.Nautilus.desktop', 'org.telegram.desktop.desktop']"
 
 # Reorder apps
 gsettings reset org.gnome.shell app-picker-layout
