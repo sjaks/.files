@@ -14,9 +14,6 @@ set brackets ""')>]}"
 ## Display line numbers to the left of the text.
 set linenumbers
 
-## Allow nano to be suspended.
-set suspend
-
 ## Use this tab size instead of the default; it must be greater than 0.
 set tabsize 4
 
