@@ -43,16 +43,13 @@ daily () {
 	rm /home/sami/.node_repl_history
 	rm /home/sami/.php_history
 	rm /home/sami/.lesshst
-	sudo dnf -y upgrade
-	sudo dnf -y autoremove
-	sudo flatpak update -y
+	sudo pacman -Syu
 }
 
 
 # Custom aliases
 alias ll='ls -alFh --group-directories-first'
 alias curll='curl -IL'
-alias code='flatpak run com.visualstudio.code'
 
 
 # Bash completion
