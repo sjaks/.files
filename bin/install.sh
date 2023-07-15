@@ -54,7 +54,8 @@ gnome-tweak-tool \
 gnome-browser-connector \
 gnome-sound-recorder \
 pavucontrol \
-rhythmbox \
+mpv \
+easyeffects \
 inkscape \
 gimp \
 obs-studio \
@@ -81,7 +82,8 @@ gnome-maps \
 gnome-characters \
 gnome-font-viewer \
 gnome-tour \
-gnome-photos
+gnome-photos \
+gnome-calendar
 
 # Install vscode extensions
 code --install-extension piousdeer.adwaita-theme
