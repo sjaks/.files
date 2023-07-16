@@ -83,7 +83,9 @@ gnome-characters \
 gnome-font-viewer \
 gnome-tour \
 gnome-photos \
-gnome-calendar
+gnome-calendar \
+totem \
+gnome-music
 
 # Install vscode extensions
 code --install-extension piousdeer.adwaita-theme
