@@ -71,6 +71,10 @@ makepkg -si
 # Install google chrome
 yay -S google-chrome
 
+# Install apps only available on flathub
+flatpak install -y flathub io.bassi.Amberol
+flatpak install -y flathub com.spotify.Client
+
 # Remove unnecessary preinstalled things
 sudo pacman -R --noconfirm \
 cheese \
