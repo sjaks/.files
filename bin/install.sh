@@ -33,6 +33,7 @@ unzip \
 unrar \
 curl \
 wget \
+ufw \
 traceroute \
 rsync \
 entr \
@@ -223,6 +224,9 @@ sudo gpasswd -a sami docker
 sudo usermod -aG docker sami
 sudo systemctl restart docker
 sudo systemctl enable docker
+
+# Enable firewall
+sudo ufw enable
 
 
 ###############
