@@ -187,6 +187,7 @@ ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code\ -\ OSS/User/settings.json
+sudo ln -sf /home/sami/.files/rc/pacman /etc/pacman.conf
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
