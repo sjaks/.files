@@ -188,14 +188,12 @@ ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code\ -\ OSS/User/settings.json
 sudo ln -sf /home/sami/.files/rc/pacman /etc/pacman.conf
+ln -sf /home/sami/.files/pic/avatar.jpg /home/sami/.face
+ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
 sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
-
-# Fetch and link Gnome specific dotfiles and configs
-sudo ln -sf /home/sami/.files/pic/avatar.jpg /var/lib/AccountsService/icons/sami
-ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 
 
 ###############################
