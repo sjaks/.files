@@ -14,3 +14,7 @@ chmod 600 /home/sami/.ssh/id_ed25519
 ```
 3. Clone this repo: `git clone git@github.com/sjaks/.files.git`.
 4. Run `./bin/install.sh`.
+
+## Gnome Shell extensions
+- https://extensions.gnome.org/extension/615/appindicator-support/
+- https://extensions.gnome.org/extension/3193/blur-my-shell/
