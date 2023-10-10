@@ -62,15 +62,13 @@ gimp \
 obs-studio \
 discord \
 telegram-desktop \
-steam
+steam \
+firefox
 
 # Install yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-
-# Install google chrome
-yay -S google-chrome
 
 # Install apps only available on flathub
 flatpak install -y flathub io.bassi.Amberol
@@ -141,7 +139,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 gsettings set org.gnome.shell favorite-apps "[]"
 
 # Reorder apps
-gsettings set org.gnome.shell app-picker-layout "[{'google-chrome.desktop': <{'position': <0>}>, 'org.gnome.Console.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'code-oss.desktop': <{'position': <3>}>, 'org.telegram.desktop.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'htop.desktop': <{'position': <6>}>, 'mpv.desktop': <{'position': <7>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <8>}>, 'pavucontrol.desktop': <{'position': <9>}>, 'org.inkscape.Inkscape.desktop': <{'position': <10>}>, 'gimp.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'com.obsproject.Studio.desktop': <{'position': <13>}>, 'gnome-system-monitor.desktop': <{'position': <14>}>, 'org.gnome.Extensions.desktop': <{'position': <15>}>, 'org.gnome.TextEditor.desktop': <{'position': <16>}>, 'steam.desktop': <{'position': <17>}>, 'org.gnome.SoundRecorder.desktop': <{'position': <18>}>, 'simple-scan.desktop': <{'position': <19>}>, 'org.gnome.Software.desktop': <{'position': <20>}>, 'vim.desktop': <{'position': <21>}>, 'org.gnome.Settings.desktop': <{'position': <22>}>, 'yelp.desktop': <{'position': <23>}>}, {'org.gnome.Epiphany.desktop': <{'position': <0>}>, 'chrome-kajebgjangihfbkjfejcanhanjmmbcfd-Default.desktop': <{'position': <1>}>, 'lstopo.desktop': <{'position': <2>}>, 'electron22.desktop': <{'position': <3>}>, 'ardour7.desktop': <{'position': <4>}>, 'qvidcap.desktop': <{'position': <5>}>, 'qv4l2.desktop': <{'position': <6>}>, 'f8380a75-537c-4ed5-a48e-814f8215de9f': <{'position': <7>}>}]"
+gsettings set org.gnome.shell app-picker-layout "[{'firefox.desktop': <{'position': <0>}>, 'org.gnome.Console.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'code-oss.desktop': <{'position': <3>}>, 'org.telegram.desktop.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'htop.desktop': <{'position': <6>}>, 'mpv.desktop': <{'position': <7>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <8>}>, 'pavucontrol.desktop': <{'position': <9>}>, 'org.inkscape.Inkscape.desktop': <{'position': <10>}>, 'gimp.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'com.obsproject.Studio.desktop': <{'position': <13>}>, 'gnome-system-monitor.desktop': <{'position': <14>}>, 'org.gnome.Extensions.desktop': <{'position': <15>}>, 'org.gnome.TextEditor.desktop': <{'position': <16>}>, 'steam.desktop': <{'position': <17>}>, 'org.gnome.SoundRecorder.desktop': <{'position': <18>}>, 'simple-scan.desktop': <{'position': <19>}>, 'org.gnome.Software.desktop': <{'position': <20>}>, 'vim.desktop': <{'position': <21>}>, 'org.gnome.Settings.desktop': <{'position': <22>}>, 'yelp.desktop': <{'position': <23>}>}, {'org.gnome.Epiphany.desktop': <{'position': <0>}>, 'firefox-kajebgjangihfbkjfejcanhanjmmbcfd-Default.desktop': <{'position': <1>}>, 'lstopo.desktop': <{'position': <2>}>, 'electron22.desktop': <{'position': <3>}>, 'ardour7.desktop': <{'position': <4>}>, 'qvidcap.desktop': <{'position': <5>}>, 'qv4l2.desktop': <{'position': <6>}>, 'f8380a75-537c-4ed5-a48e-814f8215de9f': <{'position': <7>}>}]"
 
 # Show window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
