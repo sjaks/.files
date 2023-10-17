@@ -56,22 +56,16 @@ gnome-browser-connector \
 gnome-sound-recorder \
 pavucontrol \
 mpv \
-easyeffects \
 inkscape \
 gimp \
 obs-studio \
 discord \
 telegram-desktop \
 steam \
+fragments \
 firefox
 
-# Install yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
 # Install apps only available on flathub
-flatpak install -y flathub io.bassi.Amberol
 flatpak install -y flathub com.spotify.Client
 
 # Remove unnecessary preinstalled things
@@ -88,7 +82,13 @@ gnome-tour \
 gnome-photos \
 gnome-calendar \
 totem \
-gnome-music
+gnome-music \
+gnome-user-docs \
+simple-scan \
+baobab\
+yelp \
+epiphany \
+
 
 # Install vscode extensions
 code --install-extension piousdeer.adwaita-theme
@@ -140,7 +140,7 @@ sudo machinectl shell gdm@ /bin/bash -c "gsettings set org.gnome.desktop.interfa
 gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.TextEditor.desktop']"
 
 # Reorder apps
-gsettings set org.gnome.shell app-picker-layout "[{'firefox.desktop': <{'position': <0>}>, 'org.gnome.Console.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'code-oss.desktop': <{'position': <3>}>, 'org.telegram.desktop.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'htop.desktop': <{'position': <6>}>, 'mpv.desktop': <{'position': <7>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <8>}>, 'pavucontrol.desktop': <{'position': <9>}>, 'org.inkscape.Inkscape.desktop': <{'position': <10>}>, 'gimp.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'com.obsproject.Studio.desktop': <{'position': <13>}>, 'gnome-system-monitor.desktop': <{'position': <14>}>, 'org.gnome.Extensions.desktop': <{'position': <15>}>, 'org.gnome.TextEditor.desktop': <{'position': <16>}>, 'steam.desktop': <{'position': <17>}>, 'org.gnome.SoundRecorder.desktop': <{'position': <18>}>, 'simple-scan.desktop': <{'position': <19>}>, 'org.gnome.Software.desktop': <{'position': <20>}>, 'vim.desktop': <{'position': <21>}>, 'org.gnome.Settings.desktop': <{'position': <22>}>, 'yelp.desktop': <{'position': <23>}>}, {'org.gnome.Epiphany.desktop': <{'position': <0>}>, 'firefox-kajebgjangihfbkjfejcanhanjmmbcfd-Default.desktop': <{'position': <1>}>, 'lstopo.desktop': <{'position': <2>}>, 'electron22.desktop': <{'position': <3>}>, 'ardour7.desktop': <{'position': <4>}>, 'qvidcap.desktop': <{'position': <5>}>, 'qv4l2.desktop': <{'position': <6>}>, 'f8380a75-537c-4ed5-a48e-814f8215de9f': <{'position': <7>}>}]"
+gsettings set org.gnome.shell app-picker-layout "[{'code-oss.desktop': <{'position': <0>}>, 'org.telegram.desktop.desktop': <{'position': <1>}>, 'com.spotify.Client.desktop': <{'position': <2>}>, 'discord.desktop': <{'position': <3>}>, 'mpv.desktop': <{'position': <4>}>, 'gimp.desktop': <{'position': <5>}>, 'vim.desktop': <{'position': <6>}>, 'de.haeckerfelix.Fragments.desktop': <{'position': <7>}>, 'org.inkscape.Inkscape.desktop': <{'position': <8>}>, 'steam.desktop': <{'position': <9>}>, 'org.gnome.SoundRecorder.desktop': <{'position': <10>}>, 'com.obsproject.Studio.desktop': <{'position': <11>}>, 'pavucontrol.desktop': <{'position': <12>}>, 'htop.desktop': <{'position': <13>}>, 'gnome-system-monitor.desktop': <{'position': <14>}>, 'org.gnome.Evince.desktop': <{'position': <15>}>, 'org.gnome.Settings.desktop': <{'position': <16>}>, 'org.gnome.Calculator.desktop': <{'position': <17>}>, 'org.gnome.Software.desktop': <{'position': <18>}>, 'fr.handbrake.ghb.desktop': <{'position': <19>}>, 'org.gnome.eog.desktop': <{'position': <20>}>, 'b1987b09-9d27-4a96-8935-bb3569c50574': <{'position': <21>}>, 'e5ffae79-551f-479b-b2d6-cf7cc834d82f': <{'position': <22>}>, 'f8380a75-537c-4ed5-a48e-814f8215de9f': <{'position': <23>}>}]"
 
 # Show window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
