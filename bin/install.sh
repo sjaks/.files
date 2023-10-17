@@ -134,6 +134,7 @@ gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgr
 # Set themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+sudo machinectl shell gdm@ /bin/bash -c "gsettings set org.gnome.desktop.interface icon-theme 'Papirus'"
 
 # Change dock favourites
 gsettings set org.gnome.shell favorite-apps "[]"
