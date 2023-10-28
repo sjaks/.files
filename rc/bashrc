@@ -48,6 +48,7 @@ daily () {
 
 
 # Custom aliases
+alias code='flatpak run com.visualstudio.code'
 alias ll='ls -alFh --group-directories-first'
 alias curll='curl -IL'
 

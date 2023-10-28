@@ -21,23 +21,25 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.preferredDarkColorTheme": "Ayu Dark",
+    "workbench.preferredDarkColorTheme": "Adwaita Dark",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.defaultProfile.linux": "bash",
     "editor.guides.bracketPairs": true,
     "editor.formatOnPaste": true,
-    "workbench.preferredLightColorTheme": "Ayu Light Bordered",
-    "workbench.preferredHighContrastLightColorTheme": "Ayu Light Bordered",
-    "workbench.preferredHighContrastColorTheme": "Ayu Dark",
+    "workbench.preferredLightColorTheme": "Adwaita Light",
+    "workbench.preferredHighContrastLightColorTheme": "Adwaita Light & colorful status bar",
+    "workbench.preferredHighContrastColorTheme": "Adwaita Dark & colorful status bar",
     "workbench.statusBar.visible": false,
     "workbench.tips.enabled": false,
-    "window.autoDetectColorScheme": true,
     "editor.fontFamily": "Source Code Pro",
     "git.openRepositoryInParentFolders": "never",
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.fontSize": 15,
-    "workbench.colorTheme": "Adwaita Light & colorful status bar",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.colorTheme": "Adwaita Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.activeIconPack": "react",
+    "workbench.productIconTheme": "adwaita",
+    "window.autoDetectHighContrast": false
 }
