@@ -182,6 +182,9 @@ dconf write /org/gnome/desktop/wm/keybindings/switch-applications-backward "['<S
 dconf write /org/gnome/desktop/wm/keybindings/switch-windows "['<Alt>Tab']"
 dconf write /org/gnome/desktop/wm/keybindings/switch-windows-backward "['<Shift><Alt>Tab']"
 
+# Hide all active windows hotkey
+gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
+
 
 ###################################
 # CONFIGURE DIRECTORIES AND FILES #
