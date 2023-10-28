@@ -215,7 +215,6 @@ gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'de
 gsettings set org.gnome.desktop.notifications show-in-lock-screen false
 
 # Show Gnome bar settings
-gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Enable sound over-amplification
