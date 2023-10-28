@@ -130,7 +130,7 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 gsettings set org.gnome.desktop.interface enable-animations true
 
 # Set wallpaper
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/drool-l.svg'
+gsettings set org.gnome.desktop.background picture-uri 'https://i.imgur.com/B81oLyw.jpg'
 
 # Set themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
@@ -142,6 +142,18 @@ gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Naut
 
 # Show window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+
+# Reset avatar
+sudo rm /var/lib/AccountsService/icons/sami
+
+# Hide unwanted clutter from the app grid
+for FILE in `cat /home/sami/.files/rc/grid`; do
+    if [ -e "$/usr/share/applications/${FILE}" ]; then
+        echo "NoDisplay=true" > "/home/sami/.local/share/applications/${FILE}"
+    fi
+done
+gsettings set org.gnome.desktop.app-folders folder-children ['']
+gsettings reset org.gnome.shell app-picker-layout
 
 
 ################################
@@ -191,15 +203,6 @@ ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
 sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
 sudo ln -sf /home/sami/.files/rc/pacman /etc/pacman.conf
-
-# Hide unwanted clutter from the app grid
-for FILE in `cat /home/sami/.files/rc/grid`; do
-    if [ -e "$/usr/share/applications/${FILE}" ]; then
-        echo "NoDisplay=true" > "/home/sami/.local/share/applications/${FILE}"
-    fi
-done
-gsettings set org.gnome.desktop.app-folders folder-children ['']
-gsettings reset org.gnome.shell app-picker-layout
 
 
 ###############################
