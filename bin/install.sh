@@ -237,6 +237,7 @@ sudo systemctl enable docker
 
 # Enable firewall
 sudo ufw enable
+sudo systemctl enable ufw
 
 
 ###############
