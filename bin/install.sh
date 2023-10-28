@@ -195,6 +195,15 @@ ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
 sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
 
+# Hide unwanted clutter from the app grid
+for FILE in `cat /home/sami/.files/rc/grid`; do
+    if [ -e "$/usr/share/applications/${FILE}" ]; then
+        echo "NoDisplay=true" > "/home/sami/.local/share/applications/${FILE}"
+    fi
+done
+gsettings set org.gnome.desktop.app-folders folder-children ['']
+gsettings reset org.gnome.shell app-picker-layout
+
 
 ###############################
 # DO ADDITIONAL CONFIGURATION #
