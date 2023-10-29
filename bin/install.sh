@@ -102,6 +102,8 @@ code --install-extension bradlc.vscode-tailwindcss
 code --install-extension PKief.material-icon-theme
 code --install-extension shardulm94.trailing-spaces
 code --install-extension eamodio.gitlens
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension redhat.vscode-yaml
 
 
 ############################
