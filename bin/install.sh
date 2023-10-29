@@ -148,10 +148,14 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 sudo rm /var/lib/AccountsService/icons/sami
 
 # Hide unwanted clutter from the app grid
+APPLICATION_PATH="/usr/share/applications"
+USER_APPLICATION_PATH="${HOME}/.local/share/applications"
 for FILE in `cat /home/sami/.files/rc/grid`; do
-    if [ -e "$/usr/share/applications/${FILE}" ]; then
-        echo "NoDisplay=true" > "/home/sami/.local/share/applications/${FILE}"
-    fi
+        if [ -e "${APPLICATION_PATH}/${FILE}" ]; then
+                echo "NoDisplay=true" > "${USER_APPLICATION_PATH}/${FILE}"
+        elif [ ! -e "${APPLICATION_PATH}/${FILE}" ] && [ -e "${USER_APPLICATION_PATH}/${FILE}" ]; then
+                rm "${USER_APPLICATION_PATH}/${FILE}"
+        fi
 done
 gsettings set org.gnome.desktop.app-folders folder-children ['']
 gsettings reset org.gnome.shell app-picker-layout
