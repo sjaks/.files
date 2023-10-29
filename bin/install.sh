@@ -130,7 +130,8 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspen
 gsettings set org.gnome.desktop.interface enable-animations true
 
 # Set wallpaper
-gsettings set org.gnome.desktop.background picture-uri 'https://i.imgur.com/B81oLyw.jpg'
+wget -O /home/sami/.wallpaper.jpg https://i.imgur.com/B81oLyw.jpg
+gsettings set org.gnome.desktop.background picture-uri 'file:///home/sami/.wallpaper.jpg'
 
 # Set themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
