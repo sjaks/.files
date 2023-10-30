@@ -1,7 +1,6 @@
 # .files
 # sjaks@github.com
 
-
 ###########################
 # INITIALIZE INSTALLATION #
 ###########################
@@ -13,184 +12,45 @@ dconf reset -f /
 setxkbmap fi
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'fi')]"
 
+# Set timezone
+sudo timedatectl set-timezone Europe/Helsinki
+
+# Pacman init
+sudo pacman -Syu --noconfirm
+
 
 ######################
 # CONFIGURE PACKAGES #
 ######################
 
-# Pacman init
-sudo pacman -Syu --noconfirm
+# Install pacman packages
+sudo pacman -S --noconfirm --needed $(< ${HOME}/.files/pkg/pacman)
 
-# Install additional Gnome packages with pacman
-sudo pacman -S \
-base-devel \
-htop \
-gcc \
-ufw \
-vim \
-unzip \
-unrar \
-curl \
-wget \
-ufw \
-traceroute \
-rsync \
-entr \
-nmap \
-whois \
-ncdu \
-mlocate \
-the_silver_searcher \
-moreutils \
-papirus-icon-theme \
-neofetch \
-python3 \
-python-pip \
-flake8 \
-docker \
-docker-compose \
-noto-fonts-emoji \
-gnome-tweak-tool \
-gnome-browser-connector \
-gnome-sound-recorder \
-pavucontrol \
-mpv \
-inkscape \
-gimp \
-obs-studio \
-discord \
-telegram-desktop \
-steam \
-fragments \
-firefox
+# Install apps only available on Flathub
+while IFS= read -r package; do flatpak install -y flathub "$package"; done < ${HOME}/.files/pkg/flathub
 
-# Install apps only available on flathub
-flatpak install -y flathub com.spotify.Client
-flatpak install -y flathub com.visualstudio.code
+# Install code extensions
+while IFS= read -r extension; do code --install-extension "$extension"; done < ${HOME}/.files/pkg/vscode
 
-# Remove unnecessary preinstalled things
-sudo pacman -R --noconfirm \
-cheese \
-gnome-weather \
-gnome-clocks \
-gnome-contacts \
-gnome-connections \
-gnome-maps \
-gnome-characters \
-gnome-font-viewer \
-gnome-tour \
-gnome-photos \
-gnome-calendar \
-totem \
-gnome-music \
-gnome-user-docs \
-simple-scan \
-baobab\
-yelp \
-epiphany \
-
-
-# Install vscode extensions
-code --install-extension piousdeer.adwaita-theme
-code --install-extension ms-python.python
-code --install-extension bmewburn.vscode-intelephense-client
-code --install-extension ms-vscode.vscode-typescript-next
-code --install-extension ecmel.vscode-html-css
-code --install-extension esbenp.prettier-vscode
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension bradlc.vscode-tailwindcss
-code --install-extension PKief.material-icon-theme
-code --install-extension shardulm94.trailing-spaces
-code --install-extension eamodio.gitlens
-code --install-extension ms-vscode-remote.remote-ssh
-code --install-extension redhat.vscode-yaml
-
-
-############################
-# CONFIGURE POWER BEHAVIOR #
-############################
-
-# Set screen power settings
-gsettings set org.gnome.desktop.session idle-delay 0
-gsettings set org.gnome.desktop.lockdown disable-lock-screen false
-gsettings set org.gnome.desktop.screensaver lock-enabled true
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
-
-# Disable inactivity suspending
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
-
-# Set power button action
-gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend
+# Remove bloatware
+sudo pacman -R --noconfirm $(< ${HOME}/.files/pkg/blacklist)
 
 
 ###########################
 # SET APPEARANCE SETTINGS #
 ###########################
 
-# Enable Gnome animations
-gsettings set org.gnome.desktop.interface enable-animations true
+# Download wappaper
+wget -O ${HOME}/.wallpaper.jpg https://i.imgur.com/B81oLyw.jpg
 
-# Set wallpaper
-wget -O /home/sami/.wallpaper.jpg https://i.imgur.com/B81oLyw.jpg
-gsettings set org.gnome.desktop.background picture-uri 'file:///home/sami/.wallpaper.jpg'
-
-# Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+# Set GDM icon theme
 sudo machinectl shell gdm@ /bin/bash -c "gsettings set org.gnome.desktop.interface icon-theme 'Papirus'"
 
-# Change dock favourites
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.TextEditor.desktop']"
-
-# Show window buttons
-gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-
 # Reset avatar
-sudo rm /var/lib/AccountsService/icons/sami
+sudo rm /var/lib/AccountsService/icons/${USER}
 
-# Hide unwanted clutter from the app grid
-APPLICATION_PATH="/usr/share/applications"
-USER_APPLICATION_PATH="${HOME}/.local/share/applications"
-for FILE in `cat /home/sami/.files/rc/grid`; do
-        if [ -e "${APPLICATION_PATH}/${FILE}" ]; then
-                echo "NoDisplay=true" > "${USER_APPLICATION_PATH}/${FILE}"
-        elif [ ! -e "${APPLICATION_PATH}/${FILE}" ] && [ -e "${USER_APPLICATION_PATH}/${FILE}" ]; then
-                rm "${USER_APPLICATION_PATH}/${FILE}"
-        fi
-done
-gsettings set org.gnome.desktop.app-folders folder-children ['']
-gsettings reset org.gnome.shell app-picker-layout
-
-
-################################
-# CONFIGURE KEYBOARD SHORTCUTS #
-################################
-
-# Set a keyboard hotkey for closing a window
-gsettings set org.gnome.desktop.wm.keybindings close "['<Super><Shift>q']"
-
-# Configure custom hotkeys
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/','/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'gnome-console'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command '/usr/bin/kgx'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>Return'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'gnome-files'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command '/usr/bin/nautilus'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Super><Shift>Return'
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Alt>Page_Up']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Alt>Page_Down']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Alt>Insert']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Control><Super>Return']"
-
-# Better alt+tab
-dconf write /org/gnome/desktop/wm/keybindings/switch-applications "['<Super>Tab']"
-dconf write /org/gnome/desktop/wm/keybindings/switch-applications-backward "['<Shift><Super>Tab']"
-dconf write /org/gnome/desktop/wm/keybindings/switch-windows "['<Alt>Tab']"
-dconf write /org/gnome/desktop/wm/keybindings/switch-windows-backward "['<Shift><Alt>Tab']"
-
-# Hide all active windows hotkey
-gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
+# Load dconf dump
+dconf load / < ${HOME}/.files/rc/dconf
 
 
 ###################################
@@ -198,47 +58,30 @@ gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
 ###################################
 
 # Setup directories
-mkdir /home/sami/.ssh
-chown sami /home/sami/.ssh
-chmod 700 /home/sami/.ssh
+mkdir ${HOME}/.ssh
+chown $USER ${HOME}/.ssh
+chmod 700 ${HOME}/.ssh
 
 # Fetch and link global dotfiles and configs
-ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
-ln -sf /home/sami/.files/rc/nanorc /home/sami/.nanorc
-ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
-ln -sf /home/sami/.files/rc/code /home/sami/.var/app/com.visualstudio.code/config/Code/User/settings.json
-ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
+ln -sf ${HOME}/.files/rc/bashrc ${HOME}/.bashrc
+ln -sf ${HOME}/.files/rc/nanorc ${HOME}/.nanorc
+ln -sf ${HOME}/.files/rc/gitconfig ${HOME}/.gitconfig
+ln -sf ${HOME}/.files/rc/code ${HOME}/.var/app/com.visualstudio.code/config/Code/User/settings.json
+ln -sf ${HOME}/.files/rc/hidden ${HOME}/.hidden
 
 # Link the bare minimum dotfiles for the root user
-sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
-sudo ln -sf /home/sami/.files/rc/nanorc /root/.nanorc
-sudo ln -sf /home/sami/.files/rc/pacman /etc/pacman.conf
+sudo ln -sf ${HOME}/.files/rc/bashrc /root/.bashrc
+sudo ln -sf ${HOME}/.files/rc/nanorc /root/.nanorc
+sudo ln -sf ${HOME}/.files/rc/pacman /etc/pacman.conf
 
 
 ###############################
 # DO ADDITIONAL CONFIGURATION #
 ###############################
 
-# Set Nautilus settings
-gsettings set org.gnome.nautilus.preferences default-folder-viewer "list-view"
-gsettings set org.gnome.desktop.privacy remember-recent-files false
-gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'detailed_type', 'size', 'date_modified']"
-
-# Disable lock screen notifications that turn on the screen
-gsettings set org.gnome.desktop.notifications show-in-lock-screen false
-
-# Show Gnome bar settings
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-
-# Enable sound over-amplification
-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
-
-# Set timezone
-sudo timedatectl set-timezone Europe/Helsinki
-
-# Config docker service
-sudo gpasswd -a sami docker
-sudo usermod -aG docker sami
+# Configure Docker
+sudo gpasswd -a ${USER} docker
+sudo usermod -aG docker ${USER}
 sudo systemctl restart docker
 sudo systemctl enable docker
 
@@ -246,12 +89,22 @@ sudo systemctl enable docker
 sudo ufw enable
 sudo systemctl enable ufw
 
+# Hide unwanted clutter from the app grid
+APPLICATION_PATH="/usr/share/applications"
+USER_APPLICATION_PATH="${HOME}/.local/share/applications"
+for FILE in `cat ${HOME}/.files/pkg/grid`; do
+    if [ -e "${APPLICATION_PATH}/${FILE}" ]; then
+        echo "NoDisplay=true" > "${USER_APPLICATION_PATH}/${FILE}"
+    elif [ ! -e "${APPLICATION_PATH}/${FILE}" ] && [ -e "${USER_APPLICATION_PATH}/${FILE}" ]; then
+        rm "${USER_APPLICATION_PATH}/${FILE}"
+    fi
+done
+gsettings set org.gnome.desktop.app-folders folder-children ['']
+gsettings reset org.gnome.shell app-picker-layout
+
 
 ###############
 # FINAL STEPS #
 ###############
 
-clear
-echo ""
-echo "  The script has finished running."
-echo ""
+echo "-> The script has finished running."

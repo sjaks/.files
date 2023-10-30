@@ -21,6 +21,9 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "workbench.preferredDarkColorTheme": "Adwaita Dark",
     "extensions.ignoreRecommendations": true,
     "terminal.integrated.defaultProfile.linux": "bash",
@@ -33,9 +36,6 @@
     "workbench.tips.enabled": false,
     "editor.fontFamily": "Source Code Pro",
     "git.openRepositoryInParentFolders": "never",
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "editor.fontSize": 15,
     "workbench.colorTheme": "Adwaita Light",
     "workbench.iconTheme": "material-icon-theme",

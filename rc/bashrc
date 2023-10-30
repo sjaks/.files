@@ -19,18 +19,15 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-
 # Set history settings
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
 
 # Do basic maintenance to system. Syncs repos,
 # updates packages, removes some totally unnecessary
@@ -46,12 +43,10 @@ daily () {
 	sudo pacman -Syu
 }
 
-
 # Custom aliases
 alias code='flatpak run com.visualstudio.code'
 alias ll='ls -alFh --group-directories-first'
 alias curll='curl -IL'
-
 
 # Bash completion
 if ! shopt -oq posix; then
