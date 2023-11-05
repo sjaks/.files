@@ -1,4 +1,5 @@
 assistant-qt4.desktop
+assistant.desktop
 avahi-discover.desktop
 bssh.desktop
 bvnc.desktop
@@ -7,9 +8,12 @@ designer-qt4.desktop
 ipython-qtconsole.desktop
 jconsole.desktop
 linguist-qt4.desktop
+linguist.desktop
 policytool.desktop
 qdbusviewer-qt4.desktop
+qdbusviewer.desktop
 qtconfig-qt4.desktop
+qtconfig.desktop
 qv4l2.desktop
 gda-control-center-5.0.desktop
 gda-browser-5.0.desktop
