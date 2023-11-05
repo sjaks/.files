@@ -26,7 +26,7 @@ sudo pacman -Syu --noconfirm
 # Install pacman packages
 sudo pacman -S --noconfirm --needed $(< ${HOME}/.files/pkg/pacman)
 
-# Install apps only available on Flathub
+# Install apps better available on Flathub
 while IFS= read -r package; do flatpak install -y flathub "$package"; done < ${HOME}/.files/pkg/flathub
 
 # Install code extensions
