@@ -116,3 +116,5 @@ gsettings reset org.gnome.shell app-picker-layout
 ###############
 
 echo "-> The script has finished running."
+echo "-> Use the following public key:"
+cat ${HOME}/.ssh/id_ed25519.pub
