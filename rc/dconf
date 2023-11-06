@@ -35,30 +35,8 @@ toolkit-accessibility=false
 disable-lock-screen=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-console', 'google-chrome', 'transmission-gtk', 'gimp', 'discord', 'org-gnome-geary', 'firefox', 'org-gnome-software', 'org-gnome-epiphany', 'org-gnome-extensions-desktop', 'org-gnome-eog']
 show-banners=true
 show-in-lock-screen=false
-
-[org/gnome/desktop/notifications/application/discord]
-application-id='discord.desktop'
-
-[org/gnome/desktop/notifications/application/firefox]
-application-id='firefox.desktop'
-
-[org/gnome/desktop/notifications/application/gimp]
-application-id='gimp.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-console]
-application-id='org.gnome.Console.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-eog]
-application-id='org.gnome.eog.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-extensions-desktop]
-application-id='org.gnome.Extensions.desktop.desktop'
-
-[org/gnome/desktop/notifications/application/org-gnome-software]
-application-id='org.gnome.Software.desktop'
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
@@ -149,11 +127,6 @@ sort-directories-first=false
 sort-order='ascending'
 type-format='category'
 view-type='list'
-window-size=(1013, 838)
-
-[org/gtk/settings/color-chooser]
-custom-colors=[(0.011764705882352941, 0.66274509803921566, 0.95686274509803926, 1.0)]
-selected-color=(true, 0.23921568627450981, 0.2196078431372549, 0.27450980392156865, 1.0)
 
 [org/gtk/settings/file-chooser]
 date-format='regular'
@@ -166,8 +139,6 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(989, 203)
-window-size=(1203, 936)
 
 [system/locale]
 region='fi_FI.UTF-8'
