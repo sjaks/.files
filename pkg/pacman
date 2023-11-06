@@ -24,6 +24,8 @@ python-pip
 flake8
 docker
 docker-compose
+noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
 gnome-tweaks
 gnome-browser-connector
