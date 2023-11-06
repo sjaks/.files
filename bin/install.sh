@@ -57,10 +57,18 @@ dconf load / < ${HOME}/.files/rc/dconf
 # CONFIGURE DIRECTORIES AND FILES #
 ###################################
 
-# Setup directories
+# Setup ssh directory
 mkdir ${HOME}/.ssh
 chown $USER ${HOME}/.ssh
 chmod 700 ${HOME}/.ssh
+
+# Generate a new key
+if [ -f "${HOME}/.ssh/id_ed25519" ]; then
+    echo "-> SSH key already exists, won't overwrite."
+else
+    echo "-> Generating new SSH key."
+    ssh-keygen -q -t ed25519 -f ~/.ssh/id_ed25519 -N ''
+fi
 
 # Fetch and link global dotfiles and configs
 ln -sf ${HOME}/.files/rc/bashrc ${HOME}/.bashrc
