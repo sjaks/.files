@@ -107,7 +107,7 @@ for FILE in `cat ${HOME}/.files/pkg/grid`; do
         rm "${USER_APPLICATION_PATH}/${FILE}"
     fi
 done
-gsettings set org.gnome.desktop.app-folders folder-children ['']
+gsettings reset org.gnome.desktop.app-folders folder-children
 gsettings reset org.gnome.shell app-picker-layout
 
 
