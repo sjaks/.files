@@ -24,7 +24,7 @@ xkb-options=['terminate:ctrl_alt_bksp']
 [org/gnome/desktop/interface]
 clock-show-date=true
 clock-show-weekday=false
-color-scheme='default'
+color-scheme='prefer-dark'
 enable-animations=true
 gtk-theme='Adwaita'
 icon-theme='Papirus'

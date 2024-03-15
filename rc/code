@@ -37,7 +37,7 @@
     "editor.fontFamily": "Source Code Pro",
     "git.openRepositoryInParentFolders": "never",
     "editor.fontSize": 15,
-    "workbench.colorTheme": "Adwaita Light",
+    "workbench.colorTheme": "Adwaita Dark",
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.activeIconPack": "react",
     "workbench.productIconTheme": "adwaita",
