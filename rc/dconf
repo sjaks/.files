@@ -103,59 +103,9 @@ sleep-inactive-battery-type='nothing'
 command-history=['r']
 disable-user-extensions=false
 disabled-extensions=@as []
-enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'mock-tray@kramo.page', 'blur-my-shell@aunetx']
-favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'io.github.brunofin.Cohesion.desktop', 'org.gnome.Geary.desktop', 'org.gnome.Calendar.desktop', 'org.telegram.desktop.desktop', 'com.spotify.Client.desktop']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com']
+favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.telegram.desktop.desktop', 'com.spotify.Client.desktop']
 welcome-dialog-last-shown-version='44.3'
-
-[org/gnome/shell/extensions/blur-my-shell]
-settings-version=2
-
-[org/gnome/shell/extensions/blur-my-shell/appfolder]
-brightness=0.59999999999999998
-sigma=30
-
-[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
-blur=true
-brightness=0.59999999999999998
-sigma=30
-static-blur=true
-style-dash-to-dock=0
-
-[org/gnome/shell/extensions/blur-my-shell/panel]
-blur=true
-brightness=0.59999999999999998
-override-background=true
-override-background-dynamically=true
-sigma=30
-static-blur=true
-unblur-in-overview=true
-
-[org/gnome/shell/extensions/blur-my-shell/window-list]
-brightness=0.59999999999999998
-sigma=30
-
-[org/gnome/shell/extensions/dash-to-dock]
-apply-custom-theme=false
-background-color='rgb(0,0,0)'
-background-opacity=0.80000000000000004
-custom-background-color=false
-custom-theme-shrink=false
-customize-alphas=true
-dash-max-icon-size=43
-dock-position='BOTTOM'
-height-fraction=0.90000000000000002
-hide-tooltip=false
-max-alpha=0.80000000000000004
-preferred-monitor=-2
-preferred-monitor-by-connector='eDP-1'
-show-favorites=true
-show-icons-emblems=true
-show-mounts-network=false
-show-running=true
-show-show-apps-button=false
-show-trash=false
-show-windows-preview=false
-transparency-mode='DYNAMIC'
 
 [org/gtk/gtk4/settings/file-chooser]
 date-format='regular'
