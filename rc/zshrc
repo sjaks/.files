@@ -1,0 +1,26 @@
+### Simple ZSH configuration, tested on a MacOS computer
+### Adds colors to the default terminal,
+### makes some necessary commands available
+### and enables a simple promp with autocomplete.
+
+# Use nano/pico as the default CLI editor
+export EDITOR="pico"
+
+# Add 3rd party locations to PATH
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Custom aliases
+alias ll="ls -alFh"
+
+# Enable color support for common CLI apps
+export CLICOLOR=1
+
+# Enable autocomplete (also for git)
+autoload -Uz compinit && compinit
+
+# Set prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+PROMPT=' %F{green}%~%f: %F{red}${vcs_info_msg_0_}%f$ '
