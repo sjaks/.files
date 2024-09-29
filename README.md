@@ -1,4 +1,4 @@
-# My Linux dotfiles and install scripts
+# My Linux (and MacOS) dotfiles and install scripts
 Works on my machine - might not on yours. Use for inspiration.  
 Tested on x86_64-bit machines on Arch Linux.
 
