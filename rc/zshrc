@@ -8,6 +8,7 @@ export EDITOR="pico"
 
 # Add 3rd party locations to PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Custom aliases
 alias ll="ls -alFh"
@@ -17,6 +18,7 @@ export CLICOLOR=1
 
 # Enable autocomplete (also for git)
 autoload -Uz compinit && compinit
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set prompt
 autoload -Uz vcs_info
