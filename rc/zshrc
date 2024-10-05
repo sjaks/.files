@@ -1,3 +1,7 @@
+# .zshrc
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # Vars
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='pico'
@@ -7,12 +11,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 # ZSH settings
 ZSH_THEME="af-magic"
 zstyle ':omz:update' mode reminder
-plugins=(git docker)
+plugins=(git docker zsh-autosuggestions)
 
 # Custom aliases
 alias ll="ls -alFh"
 
-# Command history
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+# Load shell
 source $ZSH/oh-my-zsh.sh
+echo "Good day!"
