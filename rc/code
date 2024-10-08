@@ -1,45 +1,26 @@
 {
-    "python.pythonPath": "/usr/bin/python3",
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.layoutControl.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 13,
+    "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
-    "window.menuBarVisibility": "hidden",
     "workbench.tree.indent": 4,
-    "files.autoSave": "onFocusChange",
     "update.showReleaseNotes": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "explorer.confirmDragAndDrop": false,
-    "workbench.startupEditor": "none",
     "window.restoreWindows": "none",
     "files.hotExit": "off",
     "editor.rulers": [
         79
     ],
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "workbench.preferredDarkColorTheme": "Adwaita Dark",
     "extensions.ignoreRecommendations": true,
-    "terminal.integrated.defaultProfile.linux": "bash",
     "editor.guides.bracketPairs": true,
     "editor.formatOnPaste": true,
-    "workbench.preferredLightColorTheme": "Adwaita Dark",
-    "workbench.preferredHighContrastLightColorTheme": "Adwaita Dark & colorful status bar",
-    "workbench.preferredHighContrastColorTheme": "Adwaita Dark & colorful status bar",
     "workbench.statusBar.visible": false,
     "workbench.tips.enabled": false,
-    "editor.fontFamily": "Source Code Pro",
-    "git.openRepositoryInParentFolders": "never",
-    "editor.fontSize": 15,
-    "workbench.colorTheme": "Adwaita Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "material-icon-theme.activeIconPack": "react",
-    "workbench.productIconTheme": "adwaita",
+    "workbench.colorTheme": "Default Dark Modern",
     "window.autoDetectHighContrast": false
 }

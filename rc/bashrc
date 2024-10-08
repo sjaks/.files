@@ -29,22 +29,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Do basic maintenance to system. Syncs repos,
-# updates packages, removes some totally unnecessary temp files.
-daily () {
-	rm /home/sami/.python_history
-	rm /home/sami/.viminfo
-	rm /home/sami/.wget-hsts
-	rm /home/sami/.gnuplot_history
-	rm /home/sami/.node_repl_history
-	rm /home/sami/.php_history
-	rm /home/sami/.lesshst
-	flatpak update -y
-	flatpak uninstall --unused -y
-	sudo pacman -Syu
-	sudo pacman -Sc --noconfirm
-}
-
 # Custom aliases
 alias code='flatpak run com.visualstudio.code'
 alias ll='ls -alFh --group-directories-first'
