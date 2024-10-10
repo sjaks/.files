@@ -1,4 +1,6 @@
-PROMPT='%~/:$(git_prompt_info)%{$reset_color%} > '
+PROMPT_NEWLINE=$'\n'
+DIR_PREFIX=%{$fg[blue]%}
+PROMPT='${DIR_PREFIX}%~/:$(git_prompt_info)%{$reset_color%}${PROMPT_NEWLINE}> '
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
