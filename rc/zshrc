@@ -17,7 +17,8 @@ zstyle ':omz:update' mode reminder
 plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 # Aliases
-dcup="docker compose -f docker-compose.arm.yml -f docker-compose.override.debug.yml up"
+alias dcup="docker compose -f docker-compose.arm.yml up"
+alias dcupd="docker compose -f docker-compose.arm.yml -f docker-compose.override.debug.yml up"
 
 # Load shell
 source $ZSH/oh-my-zsh.sh
