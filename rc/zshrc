@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="pico"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="/opt/homebrew/bin:$PATH"
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # ZSH settings
 ZSH_THEME="custom"
@@ -17,8 +18,14 @@ zstyle ':omz:update' mode reminder
 plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 # Aliases
-alias dcup="docker compose -f docker-compose.arm.yml up"
-alias dcupd="docker compose -f docker-compose.arm.yml -f docker-compose.override.debug.yml up"
+alias dcup="docker compose -f docker-compose.yml up -d"
+alias dcupd="docker compose -f docker-compose.yml -f docker-compose.override.debug.yml up -d"
+alias dclogs="docker compose logs --follow"
+alias cstart="colima start --cpu 12 --memory 12 --vm-type=vz --vz-rosetta"
+alias cstop="colima stop"
 
 # Load shell
 source $ZSH/oh-my-zsh.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
