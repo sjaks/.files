@@ -21,8 +21,6 @@ plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting fzf)
 alias dcup="docker compose -f docker-compose.yml up -d"
 alias dcupd="docker compose -f docker-compose.yml -f docker-compose.override.debug.yml up -d"
 alias dclogs="docker compose logs --follow"
-alias cstart="colima start --cpu 12 --memory 12 --vm-type=vz --vz-rosetta"
-alias cstop="colima stop"
 
 # Load shell
 source $ZSH/oh-my-zsh.sh
