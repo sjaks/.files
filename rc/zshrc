@@ -17,13 +17,18 @@ ZSH_THEME="custom"
 zstyle ':omz:update' mode reminder
 plugins=(git docker zsh-autosuggestions zsh-syntax-highlighting fzf)
 
-# Aliases
+# Docker aliases
 alias dcup="docker compose -f docker-compose.yml up -d"
 alias dcupd="docker compose -f docker-compose.yml -f docker-compose.override.debug.yml up -d"
 alias dclogs="docker compose logs --follow"
 
 # Load shell
 source $ZSH/oh-my-zsh.sh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Basic command replacements
+alias cd="z"
+alias ls="eza"
+alias ll="eza -l"
+alias cat="bat"
+eval "$(zoxide init zsh)"
