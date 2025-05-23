@@ -32,3 +32,6 @@ alias ls="eza"
 alias ll="eza -l"
 alias cat="bat"
 eval "$(zoxide init zsh)"
+
+# Other helpful aliases
+alias upd="brew update && brew upgrade && brew cleanup"
